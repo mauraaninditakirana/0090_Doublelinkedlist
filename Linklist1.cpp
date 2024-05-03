@@ -50,6 +50,10 @@ void addNode()
         {
             current->prev = newNode;
         }
+        if (previous != NULL)
+        {
+            previous->next = newNode;
+        }
         else
         {
             START = newNode;
@@ -187,6 +191,31 @@ int main()
             cout << "\nEnter your choice (1-6): ";
             char ch;
             cin >> ch;
+
+            switch (ch);
+            {
+                case '1':
+                    addNode();
+                    break;
+                case '2':
+                    deleteNode();
+                    break;
+                case '3':
+                    traverse();
+                    break;
+                case '4':
+                    revtraverse();
+                    break;
+                case '5':
+                    searchData;
+                    break;
+                case '6':
+                    return 0;
+                default:
+                    cout << "\nInvalid option" << endl;
+                    break;
+
+            }
         }
         
     }
