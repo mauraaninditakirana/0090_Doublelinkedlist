@@ -22,7 +22,7 @@ void addNode()
     {
         if (START != NULL && newNode-> noMhs == START->noMhs)
         {
-            cout << "\033[31mDuplicate roll numbers not allowed\033]0m" << endl;
+            cout << "\033[31mDuplicate roll numbers not allowed\033[0m" << endl;
             return;
         }
         newNode->next = START;
@@ -82,5 +82,16 @@ void deleteNode()
     }
     current = START;
     previous = NULL;
-    
+
+    while (current != NULL && current->noMhs != rollNo)
+    {
+        previous = current;
+        current = current->next;
+    }
+
+    if (current == NULL)
+    {
+        cout << "\033[31mThe reocrg with roll number " << rollNo << "not found\033[0m" << endl;
+        return;
+    }
 }
